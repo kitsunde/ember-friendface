@@ -3,6 +3,7 @@ Ember.FacebookMixin = Ember.Mixin.create({
   fbInitParams: Ember.Object.create(),
 
   init: function(){
+    this._super();
     window.fbAsyncInit = this.fbAsyncInit.bind(this);
     (function(d, s, id){
       var js, fjs = d.getElementsByTagName(s)[0];
