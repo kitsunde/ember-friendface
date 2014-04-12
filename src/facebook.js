@@ -1,9 +1,15 @@
 Ember.FacebookMixin = Ember.Mixin.create({
   fbUser: undefined,
+  // Wait for the FB API to load before initializing ember, this should only
+  // be necessary for testing.
+  fbDeferReadiness: false,
   fbInitParams: Ember.Object.create(),
 
   init: function(){
     this._super();
+    if(this.fbDeferReadiness){
+      this.deferReadiness();
+    }
     window.fbAsyncInit = this.fbAsyncInit.bind(this);
     (function(d, s, id){
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -15,10 +21,16 @@ Ember.FacebookMixin = Ember.Mixin.create({
     }(document, 'script', 'facebook-jssdk'));
   },
   fbAsyncInit: function(){
+    if(this.fbDeferReadiness){
+      this.advanceReadiness();
+    }
+
     var params = this.get('fbInitParams');
+
     FB.init(params);
 
     this.set('FBLoading', true);
+
     FB.Event.subscribe('auth.authResponseChange',
       this.updateFacebookUser.bind(this));
   },
