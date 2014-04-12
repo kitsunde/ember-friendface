@@ -1,0 +1,3 @@
+# Ember Friendface
+
+Attempts to integrate ember and facebook.
