@@ -1,0 +1,7 @@
+{
+  "name": "ember-tests",
+  "dependencies": {
+    "ember": "1.5.0",
+    "qunit": "1.14.0"
+  }
+}
