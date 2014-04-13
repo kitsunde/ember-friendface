@@ -73,13 +73,13 @@ Friendface.AnchorComponent = Ember.Component.extend({
   href: '#'
 });
 
-Friendface.FbLoginComponent = Ember.AnchorComponent.extend({
+Friendface.FbLoginComponent = Friendface.AnchorComponent.extend({
   click: function(){
     FB.login(function(){});
   }
 });
 
-Friendface.FbLogoutComponent = Ember.AnchorComponent.extend({
+Friendface.FbLogoutComponent = Friendface.AnchorComponent.extend({
   click: function(){
     FB.logout(function(){});
   }
