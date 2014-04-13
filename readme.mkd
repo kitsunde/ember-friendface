@@ -27,3 +27,9 @@ Templates:
     <script type="text/x-handlebars" id="components/fb-logout">
         {{yield}}
     </script>
+
+
+### Asking for more permissions
+
+  {{#fb-login scope='manage_pages'}}Login{{/fb-login}}
+

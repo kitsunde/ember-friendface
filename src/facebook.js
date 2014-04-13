@@ -75,7 +75,7 @@ Friendface.AnchorComponent = Ember.Component.extend({
 
 Friendface.FbLoginComponent = Friendface.AnchorComponent.extend({
   click: function(){
-    FB.login(function(){});
+    FB.login(function(){}, {scope: this.get('scope')});
   }
 });
 
