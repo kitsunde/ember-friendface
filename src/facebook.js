@@ -65,15 +65,20 @@ Ember.FacebookView = Ember.View.extend({
   }
 });
 
+Ember.AnchorComponent = Ember.Component.extend({
+  tagName: 'a',
+  attributeBindings: ['href'],
+  href: '#'
+});
 
-App.FbLoginComponent = Ember.Component.extend({
-  actions: {
-    login: function() {
-      /*
-       * The login is handled when the auth status changes through
-       * updateFacebookUser.
-       * */
-      FB.login(function(){});
-    }
+Ember.FbLoginComponent = Ember.AnchorComponent.extend({
+  click: function(){
+    FB.login(function(){});
+  }
+});
+
+Ember.FbLogoutComponent = Ember.AnchorComponent.extend({
+  click: function(){
+    FB.logout(function(){});
   }
 });

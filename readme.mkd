@@ -3,14 +3,27 @@
 Attempts to integrate ember and facebook.
 
 
-## Login
+## Login // Logout
+
+Friendface listens to Facebook sending logout / login signals. There's
+helper components:
+
+In your app:
+
+    App.FbLoginComponent = Ember.FbLoginComponent;
+    App.FbLogoutComponent = Ember.FbLogoutComponent;
+
+Templates:
 
     <script type="text/x-handlebars">
         {{#fb-login}}Login{{/fb-login}}
+        {{#fb-logout}}Logout{{/fb-logout}}
     </script>
 
     <script type="text/x-handlebars" id="components/fb-login">
-        <a {{action 'login'}}>
-            {{yield}}
-        </a>
+        {{yield}}
+    </script>
+
+    <script type="text/x-handlebars" id="components/fb-logout">
+        {{yield}}
     </script>
