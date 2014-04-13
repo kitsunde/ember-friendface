@@ -41,9 +41,9 @@ Friendface.FacebookMixin = Ember.Mixin.create({
   },
   updateFacebookUser: function(response) {
     if(response.status === 'connected'){
-      FB.api('/me', function(user) {
+      FB.api('/me', (function(user) {
         this.set('fbUser', Ember.Object.create(user));
-      });
+      }).bind(this));
     }else{
       this.setProperties({fbuser: undefined});
     }
