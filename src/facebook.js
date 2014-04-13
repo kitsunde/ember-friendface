@@ -45,7 +45,7 @@ Friendface.FacebookMixin = Ember.Mixin.create({
         this.set('fbUser', Ember.Object.create(user));
       }).bind(this));
     }else{
-      this.setProperties({fbuser: undefined});
+      this.setProperties({fbUser: undefined});
     }
   }
 });
