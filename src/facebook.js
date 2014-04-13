@@ -64,3 +64,16 @@ Ember.FacebookView = Ember.View.extend({
     });
   }
 });
+
+
+App.FbLoginComponent = Ember.Component.extend({
+  actions: {
+    login: function() {
+      /*
+       * The login is handled when the auth status changes through
+       * updateFacebookUser.
+       * */
+      FB.login(function(){});
+    }
+  }
+});

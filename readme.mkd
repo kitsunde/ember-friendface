@@ -1,3 +1,16 @@
 # Ember Friendface
 
 Attempts to integrate ember and facebook.
+
+
+## Login
+
+    <script type="text/x-handlebars">
+        {{#fb-login}}Login{{/fb-login}}
+    </script>
+
+    <script type="text/x-handlebars" id="components/fb-login">
+        <a {{action 'login'}}>
+            {{yield}}
+        </a>
+    </script>
