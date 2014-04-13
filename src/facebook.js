@@ -1,4 +1,6 @@
-Ember.FacebookMixin = Ember.Mixin.create({
+var Friendface = {};
+
+Friendface.FacebookMixin = Ember.Mixin.create({
   fbUser: undefined,
   // Wait for the FB API to load before initializing ember, this should only
   // be necessary for testing.
@@ -48,7 +50,7 @@ Ember.FacebookMixin = Ember.Mixin.create({
   }
 });
 
-Ember.FacebookView = Ember.View.extend({
+Friendface.FacebookView = Ember.View.extend({
   /*
    * This have Facebook perform XFBML parsing on each render.
    * */
@@ -65,19 +67,19 @@ Ember.FacebookView = Ember.View.extend({
   }
 });
 
-Ember.AnchorComponent = Ember.Component.extend({
+Friendface.AnchorComponent = Ember.Component.extend({
   tagName: 'a',
   attributeBindings: ['href'],
   href: '#'
 });
 
-Ember.FbLoginComponent = Ember.AnchorComponent.extend({
+Friendface.FbLoginComponent = Ember.AnchorComponent.extend({
   click: function(){
     FB.login(function(){});
   }
 });
 
-Ember.FbLogoutComponent = Ember.AnchorComponent.extend({
+Friendface.FbLogoutComponent = Ember.AnchorComponent.extend({
   click: function(){
     FB.logout(function(){});
   }

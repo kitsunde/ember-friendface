@@ -18,7 +18,7 @@
          * */
         expect(2);
         equal(window.FB, undefined);
-        var App = Ember.Application.createWithMixins(Ember.FacebookMixin, {
+        var App = Ember.Application.createWithMixins(Friendface.FacebookMixin, {
             fbInitParams: {appId: '720912231264572'},
             fbDeferReadiness: true,
             ready: function(){

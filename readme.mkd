@@ -10,8 +10,8 @@ helper components:
 
 In your app:
 
-    App.FbLoginComponent = Ember.FbLoginComponent;
-    App.FbLogoutComponent = Ember.FbLogoutComponent;
+    App.FbLoginComponent = Friendface.FbLoginComponent;
+    App.FbLogoutComponent = Friendface.FbLogoutComponent;
 
 Templates:
 
